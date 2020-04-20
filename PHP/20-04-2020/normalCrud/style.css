@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wm{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    flex-direction: column;
+}
+.wm table{
+    font-size: 16px;
+    width: 800px;
+    background-color: lightgray;
+    padding: 5px 10px;
+}
+table th{
+    text-align: left;
+}
+.btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.btn button{
+    padding: 5px 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px black inset;
+    border-width: 0;
+}
+.form{
+    width: 400px;
+    padding: 20px;
+    background-color: rgb(47, 47, 47);
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px black, 0 0 10px black inset;
+}
+.form h3{
+    padding: 10px 0;
+    color: #fff;
+}
+.form h6{
+    font-size: 14px;
+}
+input[type="text"]{
+    width: 100%;
+    line-height: 40px;
+    padding: 0 10px;
+}
+input[type="submit"]{
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px black inset;
+}
