@@ -14,11 +14,11 @@ if (!empty($upid)) {
     $phone = $data->phone;
 }
 $del = (isset($_GET["del"])) ? $_GET["del"] : null;
-if(!empty($del)){
+if (!empty($del)) {
     $check_del = $conn->query("SELECT * FROM revcrud WHERE id = $del");
-    ($check_del->num_rows == 0)? header("location: index.php"):null;
+    ($check_del->num_rows == 0) ? header("location: index.php") : null;
     $delete = $conn->query("DELETE FROM revcrud WHERE id = $del");
-    ($delete)? "<script>alert('Data Deleted Successfully');location.href='index.php'</script>" : "<script>alert('Db Problem');location.href='index.php'</script>";
+    ($delete) ? "<script>alert('Data Deleted Successfully');location.href='index.php'</script>" : "<script>alert('Db Problem');location.href='index.php'</script>";
 }
 if (isset($_POST['sub123'])) {
     $name = manush($_POST["name"]);
@@ -141,6 +141,21 @@ if ($select->num_rows > 0) {
         } ?>
     </table>
 <?php } ?>
+<form method="post" action="">
+    <input type="text" name="abid" placeholder="Student Name" id="rakib">
+</form>
+<div id="msg"></div>
+<script src="jquery-3.5.0.min.js"></script>
 <script>
-
+    $("#rakib").keyup(function() {
+        jiniya = $("#rakib").val();
+        $.ajax({
+            type: 'post',
+            url: 'shakil.php',
+            data: 'asif=' + jiniya,
+            success:function(msg) {
+                $("#msg").html(msg);
+            }
+        })
+    })
 </script>
